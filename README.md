@@ -1,5 +1,7 @@
 Medical RAG Chatbot  Response Generation Experiment
+
 Overview
+
 This project explores improving response generation in a Medical
 Retrieval-Augmented Generation (RAG) chatbot. The experiment uses the
 WHO document HEARTS D: Diagnosis and Management of Type 2 Diabetes
@@ -8,6 +10,7 @@ WHO document HEARTS D: Diagnosis and Management of Type 2 Diabetes
 The application extracts clinical document text, creates chunks,
 generates embeddings, stores them in ChromaDB, retrieves relevant
 passages and generates an answer using a Groq-hosted language model.
+
 Main features
 - Upload PDF, DOCX, TXT and HTML documents.
 - Extract text and available source metadata.
@@ -20,6 +23,7 @@ Main features
 - Display retrieved passages and generated answers in Streamlit.
 - Include source/page references when the retrieved metadata provides
   them.
+
 Architecture
 1. Document processing: extract text from the uploaded file.
 2. Chunking: split text into overlapping character-based chunks.
@@ -28,6 +32,7 @@ Architecture
 5. Retrieval: retrieve relevant passages for the user's question.
 6. Response generation: pass the retrieved evidence to the LLM with
    evidence-control instructions.
+
 Project structure
 response_generation_experiment/
 ├── app.py
@@ -44,6 +49,7 @@ response_generation_experiment/
     ├── embeddings.py
     ├── retrieval.py
     └── vector_store.py
+
 Setup
 Create and activate a virtual environment:
 python -m venv venv
@@ -66,6 +72,7 @@ recommendations. - Preserve numerical values, units and inequality
 signs. - Distinguish diagnostic criteria from management targets. - Cite
 only source and page information present in the retrieved metadata. -
 State when the retrieved evidence is insufficient.
+
 Observed experiment results
 - The final diagnostic-criteria test returned all five measurements
   and cut-off values from Table 3 of the WHO guideline.
@@ -76,6 +83,7 @@ Observed experiment results
   information must not be presented as an individualized prescription.
 No aggregate benchmark score is reported because a complete scored
 evaluation was not performed.
+
 Limitations
 - Retrieval quality depends on chunk boundaries, embedding similarity
   and retrieval settings.
@@ -88,6 +96,7 @@ Limitations
 - This project is for learning and document-based information
   retrieval, not diagnosis or treatment. It must not be used as a
   clinical decision-support system.
+
 Future improvements
 - Add stronger abstention rules for patient-specific medical
   questions.
