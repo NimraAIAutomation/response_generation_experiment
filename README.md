@@ -34,6 +34,7 @@ Architecture
    evidence-control instructions.
 
 Project structure
+
 response_generation_experiment/
 ├── app.py
 ├── requirements.txt
